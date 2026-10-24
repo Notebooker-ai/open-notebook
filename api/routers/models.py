@@ -112,7 +112,7 @@ MODEL_PREFERENCES = {
     "mistral": ["mistral-large", "mixtral"],
     "groq": ["llama-3.3", "llama-3.1", "mixtral"],
     "dashscope": ["qwen-max", "qwen-plus", "qwen-turbo"],
-    "minimax": ["MiniMax-M2.5", "MiniMax-M2.5-highspeed"],
+    "minimax": ["MiniMax-M3", "MiniMax-M2.5", "MiniMax-M2.5-highspeed"],
 }
 
 
@@ -411,6 +411,8 @@ async def get_provider_availability():
             "dashscope": "DASHSCOPE_API_KEY",
             "minimax": "MINIMAX_API_KEY",
             "novita": "NOVITA_API_KEY",
+            "siliconflow": "SILICONFLOW_API_KEY",
+            "zai": "ZAI_API_KEY",
             "ppq": "PPQ_API_KEY",
             "cohere": "COHERE_API_KEY",
         }
@@ -451,12 +453,11 @@ async def get_provider_availability():
             or _check_openai_compatible_support("TTS")
             or _check_openai_compatible_support("IMAGE")
         )
-        provider_status["anthropic_compatible"] = (
-            await _check_provider_has_credential("anthropic_compatible")
-            or (
-                bool((os.environ.get("ANTHROPIC_COMPATIBLE_BASE_URL") or "").strip())
-                and bool((os.environ.get("ANTHROPIC_COMPATIBLE_API_KEY") or "").strip())
-            )
+        provider_status["anthropic_compatible"] = await _check_provider_has_credential(
+            "anthropic_compatible"
+        ) or (
+            bool((os.environ.get("ANTHROPIC_COMPATIBLE_BASE_URL") or "").strip())
+            and bool((os.environ.get("ANTHROPIC_COMPATIBLE_API_KEY") or "").strip())
         )
 
         available_providers = [k for k, v in provider_status.items() if v]
@@ -544,9 +545,7 @@ async def get_provider_availability():
 # =============================================================================
 
 
-@router.get(
-    "/models/discover/{provider}", response_model=List[DiscoveredModelResponse]
-)
+@router.get("/models/discover/{provider}", response_model=List[DiscoveredModelResponse])
 async def discover_models(provider: str):
     """
     Discover available models from a provider without registering them.
@@ -575,7 +574,8 @@ async def discover_models(provider: str):
     except Exception as e:
         logger.error(f"Error discovering models for {provider}: {str(e)}")
         raise HTTPException(
-            status_code=500, detail="Error discovering models. Check server logs for details."
+            status_code=500,
+            detail="Error discovering models. Check server logs for details.",
         )
 
 
@@ -607,7 +607,10 @@ async def sync_models(provider: str):
         raise
     except Exception as e:
         logger.error(f"Error syncing models for {provider}: {str(e)}")
-        raise HTTPException(status_code=500, detail="Error syncing models. Check server logs for details.")
+        raise HTTPException(
+            status_code=500,
+            detail="Error syncing models. Check server logs for details.",
+        )
 
 
 @router.post("/models/sync", response_model=AllProvidersSyncResponse)
@@ -712,9 +715,7 @@ async def get_models_by_provider(provider: str):
         raise
     except Exception as e:
         logger.error(f"Error fetching models for {provider}: {str(e)}")
-        raise HTTPException(
-            status_code=500, detail=f"Error fetching models: {str(e)}"
-        )
+        raise HTTPException(status_code=500, detail=f"Error fetching models: {str(e)}")
 
 
 def _get_preferred_model(
