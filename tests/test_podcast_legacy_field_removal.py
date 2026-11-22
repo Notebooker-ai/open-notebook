@@ -35,9 +35,11 @@ class TestMigration22Registration:
         from open_notebook.database.async_migrate import AsyncMigrationManager
 
         manager = AsyncMigrationManager()
-        assert len(manager.migrations) >= 22
-        assert all(m.down_sql for m in manager.migrations)
-        assert "REMOVE FIELD IF EXISTS outline_provider" in manager.migrations[21].sql
+        assert len(manager.up_migrations) >= 22
+        assert len(manager.up_migrations) == len(manager.down_migrations)
+        assert (
+            "REMOVE FIELD IF EXISTS outline_provider" in manager.up_migrations[21].sql
+        )
 
 
 class TestMigration22Content:

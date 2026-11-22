@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { createElement, useState } from 'react'
 import { Loader2, Trash2, AlertTriangle, ChevronDown, ChevronRight } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -44,7 +44,6 @@ export function CreationArtifactCard({ artifact, notebookId }: Props) {
     f => f.content_type === 'text/html' || f.filename.toLowerCase().endsWith('.html')
   )
   const usePluginView = Boolean(hasViewBundle) || hasHtmlFile
-  const Renderer = getRenderer(artifact.schema_id)
   const isActive = artifact.status === 'running' || artifact.status === 'submitted'
   const isDone = artifact.status === 'completed' || artifact.status === 'partial'
 
@@ -112,7 +111,9 @@ export function CreationArtifactCard({ artifact, notebookId }: Props) {
         (usePluginView ? (
           <PluginViewRenderer artifact={artifact} hasViewBundle={hasViewBundle} />
         ) : (
-          <Renderer artifact={artifact} />
+          // Registry components are module-level, so resolve by lookup at the
+          // call site instead of binding a component to a local during render.
+          createElement(getRenderer(artifact.schema_id), { artifact })
         ))}
     </div>
   )

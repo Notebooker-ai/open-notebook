@@ -69,10 +69,10 @@ class TestInsightTimestampStamping:
 
         manager = AsyncMigrationManager()
         # up and down lists must stay in sync and include migration 19
-        assert len(manager.migrations) >= 19
-        assert all(m.down_sql for m in manager.migrations)
-        assert "created ON source_insight" in manager.migrations[18].sql
-        assert "updated ON source_insight" in manager.migrations[18].sql
+        assert len(manager.up_migrations) >= 19
+        assert len(manager.up_migrations) == len(manager.down_migrations)
+        assert "created ON source_insight" in manager.up_migrations[18].sql
+        assert "updated ON source_insight" in manager.up_migrations[18].sql
 
 
 # ============================================================================
