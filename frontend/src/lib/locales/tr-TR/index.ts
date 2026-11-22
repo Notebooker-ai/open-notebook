@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const trTR = {
+  creations: {
+    title: "Üretimler",
+    podcast: "Podcast",
+    noCreationsYet: "Henüz üretim yok",
+    noCreationsDesc: "Bu not defterinden bilgi kartları, podcast'ler ve daha fazlasını oluşturun.",
+  },
   common: {
     search: "Ara...",
     create: "Yeni",
@@ -548,6 +554,39 @@ export const trTR = {
     selectFinalPlaceholder: "Son yanıt modeli seçin",
     saveChanges: "Değişiklikleri Kaydet",
     processingQuestion: "Sorunuz işleniyor...",
+  },
+  creation: {
+    listDesc: "Not defterlerinizden yapay zeka oluşturmaları üretin ve yönetin.",
+    generate: "Oluştur",
+    generateTitle: "{name} oluştur",
+    generating: "Oluşturuluyor...",
+    generationStarted: "Oluşturma başladı",
+    failedToGenerate: "Oluşturma başarısız oldu",
+    nameLabel: "Ad",
+    notebookLabel: "Not defteri",
+    selectNotebook: "Bir not defteri seçin",
+    allNotebooks: "Tüm not defterleri",
+    modelFor: "Şunun için model",
+    useDefaultModel: "Varsayılan modeli kullan",
+    instructionsLabel: "Ek talimatlar",
+    instructionsPlaceholder: "İsteğe bağlı: odak alanları, ton veya neyin vurgulanacağı…",
+    noArtifactsYet: "Henüz oluşturma yok. İlkini üretin.",
+    creatorNotFound: "Bu oluşturucu kullanılamıyor.",
+    artifactDeleted: "Oluşturma silindi",
+    rendererUnavailable: "Bu oluşturma türü için görüntüleyici yok",
+    viewRawData: "Ham veriyi görüntüle",
+    status: {
+      submitted: "Sırada",
+      running: "Oluşturuluyor",
+      completed: "Tamamlandı",
+      partial: "Kısmi",
+      failed: "Başarısız",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
   },
   podcasts: {
     generateEpisode: "Podcast Bölümü Oluştur",

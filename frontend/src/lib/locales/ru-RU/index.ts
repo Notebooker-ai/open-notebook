@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const ruRU = {
+  creations: {
+    title: "Материалы",
+    podcast: "Подкаст",
+    noCreationsYet: "Пока нет материалов",
+    noCreationsDesc: "Создавайте карточки, подкасты и многое другое из этого блокнота.",
+  },
   common: {
     search: "Поиск...",
     create: "Создать",
@@ -548,6 +554,39 @@ export const ruRU = {
     selectFinalPlaceholder: "Выберите модель итогового ответа",
     saveChanges: "Сохранить изменения",
     processingQuestion: "Обработка вашего вопроса...",
+  },
+  creation: {
+    listDesc: "Создавайте и управляйте ИИ-материалами на основе ваших блокнотов.",
+    generate: "Создать",
+    generateTitle: "Создать {name}",
+    generating: "Создание...",
+    generationStarted: "Создание начато",
+    failedToGenerate: "Не удалось создать",
+    nameLabel: "Название",
+    notebookLabel: "Блокнот",
+    selectNotebook: "Выберите блокнот",
+    allNotebooks: "Все блокноты",
+    modelFor: "Модель для",
+    useDefaultModel: "Использовать модель по умолчанию",
+    instructionsLabel: "Дополнительные инструкции",
+    instructionsPlaceholder: "Необязательно: на чём сфокусироваться, тон, что подчеркнуть…",
+    noArtifactsYet: "Пока нет материалов. Создайте первый.",
+    creatorNotFound: "Этот генератор недоступен.",
+    artifactDeleted: "Материал удалён",
+    rendererUnavailable: "Нет отображения для этого типа материала",
+    viewRawData: "Показать исходные данные",
+    status: {
+      submitted: "В очереди",
+      running: "Создание",
+      completed: "Завершено",
+      partial: "Частично",
+      failed: "Ошибка",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
   },
   podcasts: {
     generateEpisode: "Сгенерировать эпизод подкаста",

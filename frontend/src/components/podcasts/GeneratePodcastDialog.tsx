@@ -41,12 +41,23 @@ const TOKEN_COUNT_DEBOUNCE_MS = 400
 interface GeneratePodcastDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
+  /** When set, this notebook is pre-expanded and the resulting episode is filed under it. */
+  defaultNotebookId?: string
 }
 
-export function GeneratePodcastDialog({ open, onOpenChange }: GeneratePodcastDialogProps) {
+export function GeneratePodcastDialog({ open, onOpenChange, defaultNotebookId }: GeneratePodcastDialogProps) {
   const { t } = useTranslation()
   const { toast } = useToast()
   const [expandedNotebooks, setExpandedNotebooks] = useState<string[]>([])
+
+  // Pre-expand the originating notebook when launched from a notebook view
+  useEffect(() => {
+    if (open && defaultNotebookId) {
+      setExpandedNotebooks((prev) =>
+        prev.includes(defaultNotebookId) ? prev : [...prev, defaultNotebookId]
+      )
+    }
+  }, [open, defaultNotebookId])
   const [selections, setSelections] = useState<Record<string, NotebookSelection>>({})
   const [episodeProfileId, setEpisodeProfileId] = useState<string>('')
   const [episodeName, setEpisodeName] = useState('')
@@ -434,6 +445,7 @@ export function GeneratePodcastDialog({ open, onOpenChange }: GeneratePodcastDia
         episode_name: episodeName.trim(),
         content,
         briefing_suffix: instructions.trim() ? instructions.trim() : undefined,
+        notebook_id: defaultNotebookId,
       }
 
       // mutateAsync resolves only after the mutation's onSuccess handler has

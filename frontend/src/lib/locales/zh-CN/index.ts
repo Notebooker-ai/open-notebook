@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const zhCN = {
+  creations: {
+    title: "创作",
+    podcast: "播客",
+    noCreationsYet: "暂无创作",
+    noCreationsDesc: "从该笔记本生成抽认卡、播客等内容。",
+  },
   common: {
     search: "搜索...",
     create: "新建",
@@ -548,6 +554,39 @@ export const zhCN = {
     selectFinalPlaceholder: "选择最终回答模型",
     saveChanges: "保存更改",
     processingQuestion: "正在处理您的问题...",
+  },
+  creation: {
+    listDesc: "从笔记本生成和管理 AI 创作。",
+    generate: "生成",
+    generateTitle: "生成 {name}",
+    generating: "正在生成...",
+    generationStarted: "已开始生成",
+    failedToGenerate: "生成失败",
+    nameLabel: "名称",
+    notebookLabel: "笔记本",
+    selectNotebook: "选择笔记本",
+    allNotebooks: "所有笔记本",
+    modelFor: "模型用于",
+    useDefaultModel: "使用默认模型",
+    instructionsLabel: "附加说明",
+    instructionsPlaceholder: "可选：重点领域、语气或需要强调的内容…",
+    noArtifactsYet: "还没有创作。生成第一个吧。",
+    creatorNotFound: "此创作器不可用。",
+    artifactDeleted: "创作已删除",
+    rendererUnavailable: "没有适用于此创作类型的渲染器",
+    viewRawData: "查看原始数据",
+    status: {
+      submitted: "排队中",
+      running: "正在生成",
+      completed: "已完成",
+      partial: "部分完成",
+      failed: "失败",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
   },
   podcasts: {
     generateEpisode: "生成播客单集",

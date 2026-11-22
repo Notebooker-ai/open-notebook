@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const esES = {
+  creations: {
+    title: "Creaciones",
+    podcast: "Pódcast",
+    noCreationsYet: "Aún no hay creaciones",
+    noCreationsDesc: "Genera tarjetas, pódcasts y más a partir de este cuaderno.",
+  },
   common: {
     search: "Buscar...",
     create: "Nuevo",
@@ -548,6 +554,39 @@ export const esES = {
     selectFinalPlaceholder: "Seleccionar modelo de respuesta final",
     saveChanges: "Guardar cambios",
     processingQuestion: "Procesando tu pregunta...",
+  },
+  creation: {
+    listDesc: "Genera y gestiona creaciones de IA a partir de tus cuadernos.",
+    generate: "Generar",
+    generateTitle: "Generar {name}",
+    generating: "Generando...",
+    generationStarted: "Generación iniciada",
+    failedToGenerate: "Error al generar",
+    nameLabel: "Nombre",
+    notebookLabel: "Cuaderno",
+    selectNotebook: "Selecciona un cuaderno",
+    allNotebooks: "Todos los cuadernos",
+    modelFor: "Modelo para",
+    useDefaultModel: "Usar modelo predeterminado",
+    instructionsLabel: "Instrucciones adicionales",
+    instructionsPlaceholder: "Opcional: áreas de enfoque, tono o qué enfatizar…",
+    noArtifactsYet: "Aún no hay creaciones. Genera la primera.",
+    creatorNotFound: "Este creador no está disponible.",
+    artifactDeleted: "Creación eliminada",
+    rendererUnavailable: "No hay visualización disponible para este tipo de creación",
+    viewRawData: "Ver datos sin procesar",
+    status: {
+      submitted: "En cola",
+      running: "Generando",
+      completed: "Completado",
+      partial: "Parcial",
+      failed: "Fallido",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
   },
   podcasts: {
     generateEpisode: "Generar episodio de podcast",

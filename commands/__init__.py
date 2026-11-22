@@ -14,6 +14,7 @@ from open_notebook.database.repository import apply_database_defaults
 
 apply_database_defaults()
 
+from .creation_commands import generate_creation_artifact_command
 from .embedding_commands import (
     embed_insight_command,
     embed_note_command,
@@ -31,5 +32,6 @@ __all__ = [
     "rebuild_embeddings_command",
     # Other commands
     "generate_podcast_command",
+    "generate_creation_artifact_command",
     "process_source_command",
 ]

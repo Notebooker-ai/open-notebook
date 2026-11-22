@@ -171,10 +171,13 @@ async def get_podcast_job_status(job_id: str):
 
 
 @router.get("/podcasts/episodes", response_model=List[PodcastEpisodeResponse])
-async def list_podcast_episodes():
-    """List all podcast episodes"""
+async def list_podcast_episodes(notebook_id: Optional[str] = None):
+    """List podcast episodes, optionally scoped to a single notebook"""
     try:
-        episodes = await PodcastService.list_episodes()
+        if notebook_id:
+            episodes = await PodcastService.list_episodes(notebook_id=notebook_id)
+        else:
+            episodes = await PodcastService.list_episodes()
 
         # Batch-fetch job status for every episode with a command in one
         # query instead of one round trip per episode (see
@@ -378,6 +381,7 @@ async def retry_podcast_episode(episode_id: str):
             episode_profile_name=ep_profile_name,
             speaker_profile_name=sp_profile_name,
             episode_name=episode_name,
+            notebook_id=str(episode.notebook_id) if episode.notebook_id else None,
             content=content,
         )
 

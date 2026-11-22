@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const frFR = {
+  creations: {
+    title: "Créations",
+    podcast: "Podcast",
+    noCreationsYet: "Aucune création pour le moment",
+    noCreationsDesc: "Générez des cartes mémoire, des podcasts et plus encore à partir de ce carnet.",
+  },
   common: {
     search: "Recherche...",
     create: "Créer",
@@ -548,6 +554,39 @@ export const frFR = {
     selectFinalPlaceholder: "Sélectionner le modèle final",
     saveChanges: "Enregistrer les modifications",
     processingQuestion: "Traitement de votre question...",
+  },
+  creation: {
+    listDesc: "Générez et gérez des créations IA à partir de vos carnets.",
+    generate: "Générer",
+    generateTitle: "Générer {name}",
+    generating: "Génération...",
+    generationStarted: "Génération lancée",
+    failedToGenerate: "Échec de la génération",
+    nameLabel: "Nom",
+    notebookLabel: "Carnet",
+    selectNotebook: "Sélectionner un carnet",
+    allNotebooks: "Tous les carnets",
+    modelFor: "Modèle pour",
+    useDefaultModel: "Utiliser le modèle par défaut",
+    instructionsLabel: "Instructions supplémentaires",
+    instructionsPlaceholder: "Facultatif : axes prioritaires, ton ou ce qu'il faut mettre en avant…",
+    noArtifactsYet: "Aucune création pour l’instant. Générez la première.",
+    creatorNotFound: "Ce créateur n’est pas disponible.",
+    artifactDeleted: "Création supprimée",
+    rendererUnavailable: "Aucun rendu disponible pour ce type de création",
+    viewRawData: "Voir les données brutes",
+    status: {
+      submitted: "En file d’attente",
+      running: "Génération",
+      completed: "Terminé",
+      partial: "Partiel",
+      failed: "Échec",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
   },
   podcasts: {
     generateEpisode: "Générer un épisode de podcast",

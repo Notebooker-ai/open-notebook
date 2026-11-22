@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const caES = {
+  creations: {
+    title: "Creacions",
+    podcast: "Podcast",
+    noCreationsYet: "Encara no hi ha creacions",
+    noCreationsDesc: "Genera targetes, podcasts i més a partir d'aquest quadern.",
+  },
   common: {
     search: "Cerca...",
     create: "Nou",
@@ -548,6 +554,39 @@ export const caES = {
     selectFinalPlaceholder: "Selecciona el model de resposta final",
     saveChanges: "Desa els canvis",
     processingQuestion: "S'està processant la teva pregunta...",
+  },
+  creation: {
+    listDesc: "Genera i gestiona creacions d’IA a partir dels teus quaderns.",
+    generate: "Genera",
+    generateTitle: "Genera {name}",
+    generating: "S’està generant...",
+    generationStarted: "Generació iniciada",
+    failedToGenerate: "No s’ha pogut generar",
+    nameLabel: "Nom",
+    notebookLabel: "Quadern",
+    selectNotebook: "Selecciona un quadern",
+    allNotebooks: "Tots els quaderns",
+    modelFor: "Model per a",
+    useDefaultModel: "Utilitza el model per defecte",
+    instructionsLabel: "Instruccions addicionals",
+    instructionsPlaceholder: "Opcional: àrees d'enfocament, to o què emfatitzar…",
+    noArtifactsYet: "Encara no hi ha creacions. Genera la primera.",
+    creatorNotFound: "Aquest creador no està disponible.",
+    artifactDeleted: "Creació eliminada",
+    rendererUnavailable: "No hi ha cap visualització disponible per a aquest tipus de creació",
+    viewRawData: "Mostra les dades en brut",
+    status: {
+      submitted: "En cua",
+      running: "S’està generant",
+      completed: "Completat",
+      partial: "Parcial",
+      failed: "Ha fallat",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
   },
   podcasts: {
     generateEpisode: "Genera un episodi de podcast",

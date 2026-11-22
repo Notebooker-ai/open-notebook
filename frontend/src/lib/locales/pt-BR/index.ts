@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const ptBR = {
+  creations: {
+    title: "Criações",
+    podcast: "Podcast",
+    noCreationsYet: "Nenhuma criação ainda",
+    noCreationsDesc: "Gere flashcards, podcasts e muito mais a partir deste caderno.",
+  },
   common: {
     search: "Buscar...",
     create: "Novo",
@@ -548,6 +554,39 @@ export const ptBR = {
     selectFinalPlaceholder: "Selecione o modelo de resposta final",
     saveChanges: "Salvar Alterações",
     processingQuestion: "Processando sua pergunta...",
+  },
+  creation: {
+    listDesc: "Gere e gerencie criações de IA a partir dos seus cadernos.",
+    generate: "Gerar",
+    generateTitle: "Gerar {name}",
+    generating: "Gerando...",
+    generationStarted: "Geração iniciada",
+    failedToGenerate: "Falha ao gerar",
+    nameLabel: "Nome",
+    notebookLabel: "Caderno",
+    selectNotebook: "Selecione um caderno",
+    allNotebooks: "Todos os cadernos",
+    modelFor: "Modelo para",
+    useDefaultModel: "Usar modelo padrão",
+    instructionsLabel: "Instruções adicionais",
+    instructionsPlaceholder: "Opcional: áreas de foco, tom ou o que enfatizar…",
+    noArtifactsYet: "Nenhuma criação ainda. Gere a primeira.",
+    creatorNotFound: "Este criador não está disponível.",
+    artifactDeleted: "Criação excluída",
+    rendererUnavailable: "Nenhuma visualização disponível para este tipo de criação",
+    viewRawData: "Ver dados brutos",
+    status: {
+      submitted: "Na fila",
+      running: "Gerando",
+      completed: "Concluído",
+      partial: "Parcial",
+      failed: "Falhou",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
   },
   podcasts: {
     generateEpisode: "Gerar Episódio de Podcast",
