@@ -92,6 +92,7 @@ Set `OPEN_NOTEBOOK_PASSWORD` for anything reachable beyond your own machine. Wit
 | [OpenAI-Compatible](openai-compatible.md) | LM Studio, vLLM, llama.cpp and other OpenAI-style servers |
 | [Local speech (Speaches)](local-tts.md) | Local text-to-speech and speech-to-text |
 | [Local speech-to-text](local-stt.md) | Whisper model choice and long audio |
+| [Vision Models](vision-models.md) | Default vision model for image, PDF page and video frame extraction; adaptive sampling and cost; system binaries (`pdftoppm`, `ffmpeg`) |
 | [Database](database.md) | SurrealDB connection settings |
 | [Security](security.md) | Password, credential encryption, CORS, hardening |
 | [Reverse Proxy](reverse-proxy.md) | nginx, Caddy, Traefik, custom domains, HTTPS |

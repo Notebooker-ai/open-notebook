@@ -56,6 +56,7 @@ Scroll down to **Default Model Assignments** on the same page.
 | **Transformation Model** | No (uses the chat model) | Transformations and insights |
 | **Tools Model** | No (uses the chat model) | Ask: the default for all three stages on the Ask page (models picked under **Advanced** override it) and for API requests without explicit models |
 | **Large Context Model** | No (uses the chat model) | Any prompt over ~105K tokens is sent here automatically |
+| **Vision Model** | No (uses the chat model) | Image, PDF page and video frame extraction. See [Vision Models](../5-CONFIGURATION/vision-models.md) (works with OpenAI, Anthropic, Google Gemini, OpenRouter, Ollama, …) |
 
 **Auto-assign Defaults** only fills Chat Model and Embedding Model. Set Speech-to-Text by hand if you want audio/video transcription; for podcasts, pick a voice model in each speaker profile (**Podcasts → Profiles**).
 

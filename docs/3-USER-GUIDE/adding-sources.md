@@ -46,6 +46,14 @@ Click **Done**. You can click **Done** on any step to submit with the current ch
 - **Upload size** is limited to 100 MB by default; `OPEN_NOTEBOOK_MAX_UPLOAD_SIZE_MB` changes the API's limit. By default the browser sends uploads straight to the API (port 5055), so that is the only limit in the app. If your setup routes API calls through the frontend's `/api` path instead (for example `API_URL` set to the frontend's own address), the frontend also caps request bodies at 100 MB. A reverse proxy in front may add its own limit.
 - **Scanned PDFs** need Docling with OCR to give usable text.
 
+### Images (with Vision Model configured)
+
+- **Images** (.jpg, .png, .webp, etc.) — Described directly by a multimodal LLM
+- **Scanned / image-heavy PDFs** — Pages rendered and analyzed page-by-page (replaces standard OCR)
+- **Videos** — Visual frames analyzed alongside the audio transcript
+
+Requires setting a default **Vision Model** in **Manage → Models → Default Model Assignments**. See the [Vision Models guide](../5-CONFIGURATION/vision-models.md) for setup, supported models, and cost guidance. Without a Vision Model configured, image-only files remain unsupported unless Docling is enabled, and PDFs/videos fall back to the standard text/audio pipeline.
+
 ### Web links
 
 - **Articles and web pages**: fetched with the URL engine chosen in **Settings → Content Processing**. Pages that render with JavaScript may need Firecrawl, Jina or Crawl4AI; see [Content Processing Engines](content-processing-engines.md).
