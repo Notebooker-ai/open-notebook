@@ -112,6 +112,22 @@ class AsyncMigrationManager:
     def __init__(self):
         self.migrations = discover_migrations()
 
+    @property
+    def up_migrations(self) -> List[AsyncMigration]:
+        """Discovered migrations in id order.
+
+        Kept for compatibility with the former hard-coded list: the legacy
+        sequential files are contiguous from 1, so index ``n - 1`` is
+        migration ``n`` and timestamp-id migrations follow them.
+        """
+        return list(self.migrations)
+
+    @property
+    def down_migrations(self) -> List[AsyncMigration]:
+        """Rollback counterparts of ``up_migrations`` (same order and length);
+        ``.sql`` holds the down SQL, empty when there is no ``_down`` file."""
+        return [AsyncMigration(m.id, m.down_sql or "") for m in self.migrations]
+
     async def get_current_version(self) -> int:
         """Highest applied migration id (0 if none). For display/logging."""
         return await get_latest_version()

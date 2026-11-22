@@ -52,7 +52,7 @@ export function useGenerateCreationArtifact(creatorKey?: string, notebookId?: st
       const res = await creationApi.generate(payload)
       // Fire-and-poll: resolve the list once the job finishes.
       void creationApi
-        .waitForCommand(res.job_id, { maxAttempts: 150, intervalMs: 3000 })
+        .waitForCommand(res.job_id, { intervalMs: 3000 })
         .then(() =>
           queryClient.invalidateQueries({
             queryKey: QUERY_KEYS.creationArtifacts(creatorKey, notebookId),

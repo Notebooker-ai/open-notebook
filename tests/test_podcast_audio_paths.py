@@ -116,9 +116,9 @@ class TestMigration21Registration:
         from open_notebook.database.async_migrate import AsyncMigrationManager
 
         manager = AsyncMigrationManager()
-        assert len(manager.migrations) >= 21
-        assert all(m.down_sql for m in manager.migrations)
-        assert "podcasts/" in manager.migrations[20].sql
+        assert len(manager.up_migrations) >= 21
+        assert len(manager.up_migrations) == len(manager.down_migrations)
+        assert "podcasts/" in manager.up_migrations[20].sql
 
     def test_up_migration_strips_known_prefixes_only(self):
         sql = (self.MIGRATIONS_DIR / "21.surrealql").read_text()

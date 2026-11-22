@@ -115,7 +115,7 @@ export function CredentialItem({
               title={t('apiKeys.testConnection')}
             >
               {isTestPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plug className="h-4 w-4" />}
-              <span className="hidden sm:inline text-xs">Test</span>
+              <span className="hidden sm:inline text-xs">{t('apiKeys.testShort')}</span>
             </Button>
             <Button
               variant="ghost" size="sm"
@@ -124,7 +124,7 @@ export function CredentialItem({
               title={t('apiKeys.syncModels')}
             >
               <Bot className="h-4 w-4" />
-              <span className="hidden sm:inline text-xs">Models</span>
+              <span className="hidden sm:inline text-xs">{t('navigation.models')}</span>
             </Button>
             <Button variant="ghost" size="sm" onClick={() => setEditOpen(true)} disabled={!!credential.decryption_error} title={t('common.edit')}>
               <Edit className="h-4 w-4" />
@@ -191,6 +191,7 @@ export function CredentialItem({
                             className="opacity-0 group-hover/model:opacity-60 hover:!opacity-100 hover:text-destructive transition-opacity"
                             onClick={() => deleteModel.mutate(model.id)}
                             title={t('models.deleteModel')}
+                            aria-label={t('models.deleteModel')}
                           >
                             <X className="h-3 w-3" />
                           </button>
