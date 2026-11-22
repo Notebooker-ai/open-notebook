@@ -71,7 +71,12 @@ class ExecuteChatRequest(BaseModel):
     session_id: str = Field(..., description="Chat session ID")
     message: str = Field(..., description="User message content")
     context: Optional[Dict[str, Any]] = Field(
-        None, description="Chat context with sources and notes (legacy, optional)"
+        None,
+        description=(
+            "Optional (legacy). The `context` object returned by POST "
+            "/api/chat/context (`sources` and `notes` lists with their "
+            "content), not the `context_config` sent to that endpoint"
+        ),
     )
     notebook_id: Optional[str] = Field(
         None,
@@ -93,7 +98,10 @@ class BuildContextRequest(BaseModel):
 
 
 class BuildContextResponse(BaseModel):
-    context: Dict[str, Any] = Field(..., description="Built context data")
+    context: Dict[str, Any] = Field(
+        ...,
+        description="Built context data; send it as `context` to POST /api/chat/execute",
+    )
     token_count: int = Field(..., description="Estimated token count")
     char_count: int = Field(..., description="Character count")
 
