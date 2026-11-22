@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const plPL = {
+  creations: {
+    title: "Materiały",
+    podcast: "Podcast",
+    noCreationsYet: "Brak materiałów",
+    noCreationsDesc: "Generuj fiszki, podcasty i więcej z tego notatnika.",
+  },
   common: {
     search: "Szukaj...",
     create: "Nowy",
@@ -549,6 +555,39 @@ export const plPL = {
     saveChanges: "Zapisz zmiany",
     processingQuestion: "Przetwarzanie pytania...",
   },
+  creation: {
+    listDesc: "Generuj i zarządzaj kreacjami AI na podstawie swoich notatników.",
+    generate: "Generuj",
+    generateTitle: "Generuj {name}",
+    generating: "Generowanie...",
+    generationStarted: "Rozpoczęto generowanie",
+    failedToGenerate: "Nie udało się wygenerować",
+    nameLabel: "Nazwa",
+    notebookLabel: "Notatnik",
+    selectNotebook: "Wybierz notatnik",
+    allNotebooks: "Wszystkie notatniki",
+    modelFor: "Model dla",
+    useDefaultModel: "Użyj modelu domyślnego",
+    instructionsLabel: "Dodatkowe instrukcje",
+    instructionsPlaceholder: "Opcjonalnie: obszary skupienia, ton lub co podkreślić…",
+    noArtifactsYet: "Brak kreacji. Wygeneruj pierwszą.",
+    creatorNotFound: "Ten kreator jest niedostępny.",
+    artifactDeleted: "Kreacja usunięta",
+    rendererUnavailable: "Brak widoku dla tego typu kreacji",
+    viewRawData: "Pokaż surowe dane",
+    status: {
+      submitted: "W kolejce",
+      running: "Generowanie",
+      completed: "Ukończono",
+      partial: "Częściowo",
+      failed: "Niepowodzenie",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "Wygeneruj odcinek podcastu",
     generateEpisodeDesc: "Wybierz treść do uwzględnienia i skonfiguruj szczegóły odcinka przed wygenerowaniem nowego odcinka podcastu.",
@@ -944,6 +983,8 @@ export const plPL = {
     ttsModelDesc: "Używany do generowania podcastów",
     sttModelLabel: "Model rozpoznawania mowy",
     sttModelDesc: "Używany do transkrypcji audio",
+    imageModelLabel: "Model obrazu",
+    imageModelDesc: "Używany do generowania obrazów",
     embeddingChangeTitle: "Zmiana modelu osadzania",
     embeddingChangeConfirm: "Zamierzasz zmienić model osadzania z {{from}} na {{to}}.",
     rebuildRequired: "Ważne: wymagana przebudowa",

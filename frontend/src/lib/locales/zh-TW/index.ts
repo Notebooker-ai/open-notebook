@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const zhTW = {
+  creations: {
+    title: "創作",
+    podcast: "Podcast",
+    noCreationsYet: "尚無創作",
+    noCreationsDesc: "從此筆記本產生字卡、Podcast 等內容。",
+  },
   common: {
     search: "搜尋...",
     create: "新增",
@@ -549,6 +555,39 @@ export const zhTW = {
     saveChanges: "儲存更改",
     processingQuestion: "正在處理您的問題...",
   },
+  creation: {
+    listDesc: "從筆記本產生與管理 AI 創作。",
+    generate: "產生",
+    generateTitle: "產生 {name}",
+    generating: "正在產生...",
+    generationStarted: "已開始產生",
+    failedToGenerate: "產生失敗",
+    nameLabel: "名稱",
+    notebookLabel: "筆記本",
+    selectNotebook: "選擇筆記本",
+    allNotebooks: "所有筆記本",
+    modelFor: "模型用於",
+    useDefaultModel: "使用預設模型",
+    instructionsLabel: "附加說明",
+    instructionsPlaceholder: "選填：重點領域、語氣或需要強調的內容…",
+    noArtifactsYet: "尚未有創作。產生第一個吧。",
+    creatorNotFound: "此創作器無法使用。",
+    artifactDeleted: "創作已刪除",
+    rendererUnavailable: "沒有適用於此創作類型的轉譯器",
+    viewRawData: "檢視原始資料",
+    status: {
+      submitted: "排隊中",
+      running: "正在產生",
+      completed: "已完成",
+      partial: "部分完成",
+      failed: "失敗",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "生成播客單集",
     generateEpisodeDesc: "在生成新的播客單集之前，選擇要包含的內容並設定單集詳情。",
@@ -944,6 +983,8 @@ export const zhTW = {
     ttsModelDesc: "用於生成播客",
     sttModelLabel: "語音轉文字模型",
     sttModelDesc: "用於音訊轉錄",
+    imageModelLabel: "圖像模型",
+    imageModelDesc: "用於圖像生成",
     embeddingChangeTitle: "嵌入模型變更",
     embeddingChangeConfirm: "您即將將嵌入模型從 {{from}} 更改為 {{to}}。",
     rebuildRequired: "重要提示：需要重建索引",

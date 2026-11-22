@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const itIT = {
+  creations: {
+    title: "Creazioni",
+    podcast: "Podcast",
+    noCreationsYet: "Ancora nessuna creazione",
+    noCreationsDesc: "Genera flashcard, podcast e altro da questo taccuino.",
+  },
   common: {
     search: "Cerca...",
     create: "Nuovo",
@@ -549,6 +555,39 @@ export const itIT = {
     saveChanges: "Salva modifiche",
     processingQuestion: "Elaborazione della tua domanda...",
   },
+  creation: {
+    listDesc: "Genera e gestisci creazioni IA dai tuoi taccuini.",
+    generate: "Genera",
+    generateTitle: "Genera {name}",
+    generating: "Generazione in corso...",
+    generationStarted: "Generazione avviata",
+    failedToGenerate: "Generazione non riuscita",
+    nameLabel: "Nome",
+    notebookLabel: "Taccuino",
+    selectNotebook: "Seleziona un taccuino",
+    allNotebooks: "Tutti i taccuini",
+    modelFor: "Modello per",
+    useDefaultModel: "Usa il modello predefinito",
+    instructionsLabel: "Istruzioni aggiuntive",
+    instructionsPlaceholder: "Facoltativo: aree di interesse, tono o cosa enfatizzare…",
+    noArtifactsYet: "Ancora nessuna creazione. Genera la prima.",
+    creatorNotFound: "Questo creatore non è disponibile.",
+    artifactDeleted: "Creazione eliminata",
+    rendererUnavailable: "Nessuna visualizzazione disponibile per questo tipo di creazione",
+    viewRawData: "Visualizza dati grezzi",
+    status: {
+      submitted: "In coda",
+      running: "Generazione",
+      completed: "Completato",
+      partial: "Parziale",
+      failed: "Non riuscito",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "Genera episodio podcast",
     generateEpisodeDesc: "Seleziona il contenuto da includere e configura i dettagli dell'episodio prima di generare un nuovo episodio podcast.",
@@ -944,6 +983,8 @@ export const itIT = {
     ttsModelDesc: "Usato per la generazione podcast",
     sttModelLabel: "Modello Speech-to-Text",
     sttModelDesc: "Usato per la trascrizione audio",
+    imageModelLabel: "Modello Immagine",
+    imageModelDesc: "Usato per la generazione di immagini",
     embeddingChangeTitle: "Cambio modello di embedding",
     embeddingChangeConfirm: "Stai per cambiare il modello di embedding da {{from}} a {{to}}.",
     rebuildRequired: "Importante: ricostruzione richiesta",

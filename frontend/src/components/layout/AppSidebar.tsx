@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -40,7 +40,26 @@ import {
   Plus,
   Wrench,
   Command,
+  Layers,
+  BarChart3,
+  LayoutDashboard,
+  Network,
+  BookOpen,
+  Sparkles,
+  type LucideIcon,
 } from 'lucide-react'
+import { useCreators } from '@/lib/hooks/use-creation'
+
+// Maps a creator manifest's `icon` (a kebab-case lucide name) to its component.
+// Add an entry when a creator declares a new icon; unmapped icons fall back to
+// Sparkles. Keep in sync with each creator's manifest `icon`.
+const CREATOR_ICONS: Record<string, LucideIcon> = {
+  layers: Layers, // flashcards
+  'bar-chart-3': BarChart3, // charts
+  'layout-dashboard': LayoutDashboard, // infographics
+  network: Network, // mindmaps
+  'book-open': BookOpen, // textbook
+}
 
 const getNavigation = (t: TFunction) => [
   {
@@ -88,7 +107,43 @@ type CreateTarget = 'source' | 'notebook' | 'podcast'
 
 export function AppSidebar() {
   const { t } = useTranslation()
-  const navigation = getNavigation(t)
+  const { creators } = useCreators()
+  const navigation = useMemo(() => {
+    return getNavigation(t).map(section => {
+      // iconClass carries the design system's per-item accent hue; preserve it
+      // off the static nav. Upstream's rule is that content-producing
+      // destinations are accented (sources/sage, notebooks/teal,
+      // podcasts/mauve) while utility pages are not, so creators — which
+      // produce content — get one too.
+      const items: {
+        name: string
+        href: string
+        icon: LucideIcon
+        iconClass?: string
+      }[] = section.items.map(i => ({
+        name: i.name,
+        href: i.href,
+        icon: i.icon as LucideIcon,
+        iconClass: i.iconClass,
+      }))
+      if (section.title === t('navigation.create')) {
+        for (const c of creators) {
+          if (!c.available) continue
+          items.push({
+            name: c.name,
+            href: `/creation/${c.key}`,
+            icon: CREATOR_ICONS[c.icon ?? ''] ?? Sparkles,
+            // One shared accent for the whole creator family: it reads as a
+            // group, and each creator's own lucide icon does the individual
+            // differentiating. Clay is unclaimed in the nav and stays legible
+            // against Podcasts' mauve in this same section.
+            iconClass: 'text-clay',
+          })
+        }
+      }
+      return { title: section.title, items }
+    })
+  }, [t, creators])
   const pathname = usePathname()
   const { logout } = useAuth()
   const { isCollapsed, toggleCollapse } = useSidebarStore()

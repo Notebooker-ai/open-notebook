@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const frFR = {
+  creations: {
+    title: "Créations",
+    podcast: "Podcast",
+    noCreationsYet: "Aucune création pour le moment",
+    noCreationsDesc: "Générez des cartes mémoire, des podcasts et plus encore à partir de ce carnet.",
+  },
   common: {
     search: "Recherche...",
     create: "Créer",
@@ -549,6 +555,39 @@ export const frFR = {
     saveChanges: "Enregistrer les modifications",
     processingQuestion: "Traitement de votre question...",
   },
+  creation: {
+    listDesc: "Générez et gérez des créations IA à partir de vos carnets.",
+    generate: "Générer",
+    generateTitle: "Générer {name}",
+    generating: "Génération...",
+    generationStarted: "Génération lancée",
+    failedToGenerate: "Échec de la génération",
+    nameLabel: "Nom",
+    notebookLabel: "Carnet",
+    selectNotebook: "Sélectionner un carnet",
+    allNotebooks: "Tous les carnets",
+    modelFor: "Modèle pour",
+    useDefaultModel: "Utiliser le modèle par défaut",
+    instructionsLabel: "Instructions supplémentaires",
+    instructionsPlaceholder: "Facultatif : axes prioritaires, ton ou ce qu'il faut mettre en avant…",
+    noArtifactsYet: "Aucune création pour l’instant. Générez la première.",
+    creatorNotFound: "Ce créateur n’est pas disponible.",
+    artifactDeleted: "Création supprimée",
+    rendererUnavailable: "Aucun rendu disponible pour ce type de création",
+    viewRawData: "Voir les données brutes",
+    status: {
+      submitted: "En file d’attente",
+      running: "Génération",
+      completed: "Terminé",
+      partial: "Partiel",
+      failed: "Échec",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "Générer un épisode de podcast",
     generateEpisodeDesc: "Sélectionnez le contenu à inclure et configurez les détails de l'épisode avant de générer un nouvel épisode de podcast.",
@@ -944,6 +983,8 @@ export const frFR = {
     ttsModelDesc: "Utilisé pour la génération de podcasts",
     sttModelLabel: "Modèle de Transcription Vocale (STT)",
     sttModelDesc: "Utilisé pour la transcription audio",
+    imageModelLabel: "Modèle d'Image",
+    imageModelDesc: "Utilisé pour la génération d'images",
     embeddingChangeTitle: "Changement de modèle d'embedding",
     embeddingChangeConfirm: "Vous êtes sur le point de changer votre modèle d'embedding de {{from}} à {{to}}.",
     rebuildRequired: "Important : Reconstruction requise",

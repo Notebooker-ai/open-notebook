@@ -4,6 +4,12 @@ import type { TranslationShape } from '../en-US';
 // Translate values only; do not change keys, placeholders or structure.
 
 export const deDE = {
+  creations: {
+    title: "Kreationen",
+    podcast: "Podcast",
+    noCreationsYet: "Noch keine Kreationen",
+    noCreationsDesc: "Erstelle Lernkarten, Podcasts und mehr aus diesem Notizbuch.",
+  },
   common: {
     search: "Suchen...",
     create: "Neu",
@@ -552,6 +558,39 @@ export const deDE = {
     saveChanges: "Änderungen speichern",
     processingQuestion: "Deine Frage wird verarbeitet...",
   },
+  creation: {
+    listDesc: "Erstellen und verwalten Sie KI-Kreationen aus Ihren Notizbüchern.",
+    generate: "Generieren",
+    generateTitle: "{name} generieren",
+    generating: "Wird generiert...",
+    generationStarted: "Generierung gestartet",
+    failedToGenerate: "Generierung fehlgeschlagen",
+    nameLabel: "Name",
+    notebookLabel: "Notizbuch",
+    selectNotebook: "Notizbuch auswählen",
+    allNotebooks: "Alle Notizbücher",
+    modelFor: "Modell für",
+    useDefaultModel: "Standardmodell verwenden",
+    instructionsLabel: "Zusätzliche Anweisungen",
+    instructionsPlaceholder: "Optional: Schwerpunkte, Tonfall oder was hervorzuheben ist…",
+    noArtifactsYet: "Noch keine Kreationen. Erstellen Sie die erste.",
+    creatorNotFound: "Dieser Creator ist nicht verfügbar.",
+    artifactDeleted: "Kreation gelöscht",
+    rendererUnavailable: "Für diesen Kreationstyp ist keine Darstellung verfügbar",
+    viewRawData: "Rohdaten anzeigen",
+    status: {
+      submitted: "In Warteschlange",
+      running: "Wird generiert",
+      completed: "Abgeschlossen",
+      partial: "Teilweise",
+      failed: "Fehlgeschlagen",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "Podcast-Episode erzeugen",
     generateEpisodeDesc: "Wähle die Inhalte aus und konfiguriere die Episodendetails, bevor eine neue Podcast-Episode erzeugt wird.",
@@ -947,6 +986,8 @@ export const deDE = {
     ttsModelDesc: "Wird für die Podcast-Erstellung verwendet",
     sttModelLabel: "Speech-to-Text-Modell",
     sttModelDesc: "Wird für Audiotranskription verwendet",
+    imageModelLabel: "Bildmodell",
+    imageModelDesc: "Wird für Bildgenerierung verwendet",
     embeddingChangeTitle: "Embedding-Modell ändern",
     embeddingChangeConfirm: "Du bist dabei, dein Embedding-Modell von {{from}} auf {{to}} zu ändern.",
     rebuildRequired: "Wichtig: Neuaufbau erforderlich",

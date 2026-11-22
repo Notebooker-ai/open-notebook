@@ -37,6 +37,7 @@ from api.routers import (
     capabilities,
     chat,
     config,
+    creation,
     credentials,
     embedding,
     embedding_rebuild,
@@ -267,6 +268,15 @@ async def lifespan(app: FastAPI):
         # Fail fast - don't start the API with an outdated database schema
         raise RuntimeError(f"Failed to run database migrations: {str(e)}") from e
 
+    # Discover Creation creators (allowlist + registry digest) for this process.
+    try:
+        from open_notebook.creation.registry import load_registry, registry_digest
+
+        load_registry()
+        logger.info(f"Creation registry digest (API): {registry_digest()}")
+    except Exception as e:
+        logger.warning(f"Creation registry load encountered errors: {e}")
+
     logger.success("API initialization completed successfully")
 
     # Yield control to the application
@@ -475,6 +485,7 @@ app.include_router(sources.router, prefix="/api", tags=["sources"])
 app.include_router(insights.router, prefix="/api", tags=["insights"])
 app.include_router(commands_router.router, prefix="/api", tags=["commands"])
 app.include_router(podcasts.router, prefix="/api", tags=["podcasts"])
+app.include_router(creation.router, prefix="/api", tags=["creation"])
 app.include_router(episode_profiles.router, prefix="/api", tags=["episode-profiles"])
 app.include_router(speaker_profiles.router, prefix="/api", tags=["speaker-profiles"])
 app.include_router(chat.router, prefix="/api", tags=["chat"])

@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const jaJP = {
+  creations: {
+    title: "作成物",
+    podcast: "ポッドキャスト",
+    noCreationsYet: "まだ作成物がありません",
+    noCreationsDesc: "このノートブックからフラッシュカードやポッドキャストなどを生成できます。",
+  },
   common: {
     search: "検索...",
     create: "新規",
@@ -549,6 +555,39 @@ export const jaJP = {
     saveChanges: "変更を保存",
     processingQuestion: "質問を処理中...",
   },
+  creation: {
+    listDesc: "ノートブックからAI作成物を生成・管理します。",
+    generate: "生成",
+    generateTitle: "{name}を生成",
+    generating: "生成中...",
+    generationStarted: "生成を開始しました",
+    failedToGenerate: "生成に失敗しました",
+    nameLabel: "名前",
+    notebookLabel: "ノートブック",
+    selectNotebook: "ノートブックを選択",
+    allNotebooks: "すべてのノートブック",
+    modelFor: "使用するモデル",
+    useDefaultModel: "デフォルトのモデルを使用",
+    instructionsLabel: "追加の指示",
+    instructionsPlaceholder: "任意：重点分野、トーン、強調したい点など…",
+    noArtifactsYet: "まだ作成物がありません。最初のものを生成しましょう。",
+    creatorNotFound: "この作成ツールは利用できません。",
+    artifactDeleted: "作成物を削除しました",
+    rendererUnavailable: "この作成タイプに対応する表示がありません",
+    viewRawData: "生データを表示",
+    status: {
+      submitted: "待機中",
+      running: "生成中",
+      completed: "完了",
+      partial: "一部完了",
+      failed: "失敗",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "ポッドキャストエピソードを生成",
     generateEpisodeDesc: "含めるコンテンツを選択し、新しいポッドキャストエピソードを生成する前にエピソードの詳細を設定してください。",
@@ -944,6 +983,8 @@ export const jaJP = {
     ttsModelDesc: "ポッドキャスト生成に使用",
     sttModelLabel: "音声認識モデル",
     sttModelDesc: "音声の書き起こしに使用",
+    imageModelLabel: "画像モデル",
+    imageModelDesc: "画像生成に使用",
     embeddingChangeTitle: "Embeddingモデルの変更",
     embeddingChangeConfirm: "Embeddingモデルを{{from}}から{{to}}に変更しようとしています。",
     rebuildRequired: "重要：再構築が必要",

@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const ruRU = {
+  creations: {
+    title: "Материалы",
+    podcast: "Подкаст",
+    noCreationsYet: "Пока нет материалов",
+    noCreationsDesc: "Создавайте карточки, подкасты и многое другое из этого блокнота.",
+  },
   common: {
     search: "Поиск...",
     create: "Создать",
@@ -549,6 +555,39 @@ export const ruRU = {
     saveChanges: "Сохранить изменения",
     processingQuestion: "Обработка вашего вопроса...",
   },
+  creation: {
+    listDesc: "Создавайте и управляйте ИИ-материалами на основе ваших блокнотов.",
+    generate: "Создать",
+    generateTitle: "Создать {name}",
+    generating: "Создание...",
+    generationStarted: "Создание начато",
+    failedToGenerate: "Не удалось создать",
+    nameLabel: "Название",
+    notebookLabel: "Блокнот",
+    selectNotebook: "Выберите блокнот",
+    allNotebooks: "Все блокноты",
+    modelFor: "Модель для",
+    useDefaultModel: "Использовать модель по умолчанию",
+    instructionsLabel: "Дополнительные инструкции",
+    instructionsPlaceholder: "Необязательно: на чём сфокусироваться, тон, что подчеркнуть…",
+    noArtifactsYet: "Пока нет материалов. Создайте первый.",
+    creatorNotFound: "Этот генератор недоступен.",
+    artifactDeleted: "Материал удалён",
+    rendererUnavailable: "Нет отображения для этого типа материала",
+    viewRawData: "Показать исходные данные",
+    status: {
+      submitted: "В очереди",
+      running: "Создание",
+      completed: "Завершено",
+      partial: "Частично",
+      failed: "Ошибка",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "Сгенерировать эпизод подкаста",
     generateEpisodeDesc: "Выберите контент для включения и настройте параметры эпизода перед генерацией.",
@@ -944,6 +983,8 @@ export const ruRU = {
     ttsModelDesc: "Используется для генерации подкастов",
     sttModelLabel: "Модель распознавания речи",
     sttModelDesc: "Используется для транскрибации аудио",
+    imageModelLabel: "Модель изображений",
+    imageModelDesc: "Используется для генерации изображений",
     embeddingChangeTitle: "Изменение модели эмбеддинга",
     embeddingChangeConfirm: "Вы собираетесь изменить модель эмбеддинга с {{from}} на {{to}}.",
     rebuildRequired: "Важно: Требуется пересоздание",

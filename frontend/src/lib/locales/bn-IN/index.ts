@@ -1,6 +1,12 @@
 import type { TranslationShape } from '../en-US';
 
 export const bnIN = {
+  creations: {
+    title: "সৃষ্টি",
+    podcast: "পডকাস্ট",
+    noCreationsYet: "এখনও কোনো সৃষ্টি নেই",
+    noCreationsDesc: "এই নোটবুক থেকে ফ্ল্যাশকার্ড, পডকাস্ট এবং আরও অনেক কিছু তৈরি করুন।",
+  },
   common: {
     search: "অনুসন্ধান...",
     create: "নতুন",
@@ -549,6 +555,39 @@ export const bnIN = {
     saveChanges: "পরিবর্তন সংরক্ষণ করুন",
     processingQuestion: "আপনার প্রশ্ন প্রক্রিয়া করা হচ্ছে...",
   },
+  creation: {
+    listDesc: "আপনার নোটবুক থেকে AI সৃষ্টি তৈরি ও পরিচালনা করুন।",
+    generate: "তৈরি করুন",
+    generateTitle: "{name} তৈরি করুন",
+    generating: "তৈরি হচ্ছে...",
+    generationStarted: "তৈরি শুরু হয়েছে",
+    failedToGenerate: "তৈরি করা যায়নি",
+    nameLabel: "নাম",
+    notebookLabel: "নোটবুক",
+    selectNotebook: "একটি নোটবুক নির্বাচন করুন",
+    allNotebooks: "সব নোটবুক",
+    modelFor: "এর জন্য মডেল",
+    useDefaultModel: "ডিফল্ট মডেল ব্যবহার করুন",
+    instructionsLabel: "অতিরিক্ত নির্দেশনা",
+    instructionsPlaceholder: "ঐচ্ছিক: ফোকাস ক্ষেত্র, টোন বা কী জোর দিতে হবে…",
+    noArtifactsYet: "এখনও কোনো সৃষ্টি নেই। প্রথমটি তৈরি করুন।",
+    creatorNotFound: "এই ক্রিয়েটরটি উপলব্ধ নয়।",
+    artifactDeleted: "সৃষ্টি মুছে ফেলা হয়েছে",
+    rendererUnavailable: "এই সৃষ্টির ধরনের জন্য কোনো রেন্ডারার উপলব্ধ নেই",
+    viewRawData: "কাঁচা ডেটা দেখুন",
+    status: {
+      submitted: "সারিতে",
+      running: "তৈরি হচ্ছে",
+      completed: "সম্পন্ন",
+      partial: "আংশিক",
+      failed: "ব্যর্থ",
+    },
+    textbook: {
+      openInNewTab: "Open in new tab",
+      loadingPreview: "Loading preview\u2026",
+      previewUnavailable: "Preview unavailable",
+    },
+  },
   podcasts: {
     generateEpisode: "পডকাস্ট এপিসোড তৈরি করুন",
     generateEpisodeDesc: "নতুন পডকাস্ট এপিসোড তৈরি করার আগে অন্তর্ভুক্ত করার জন্য কন্টেন্ট নির্বাচন করুন এবং এপিসোডের বিবরণ কনফিগার করুন।",
@@ -945,6 +984,8 @@ export const bnIN = {
     ttsModelDesc: "পডকাস্ট তৈরির জন্য ব্যবহৃত",
     sttModelLabel: "স্পিচ-টু-টেক্সট মডেল",
     sttModelDesc: "অডিও ট্রান্সক্রিপশনের জন্য ব্যবহৃত",
+    imageModelLabel: "ইমেজ মডেল",
+    imageModelDesc: "ছবি তৈরির জন্য ব্যবহৃত",
     embeddingChangeTitle: "এমবেডিং মডেল পরিবর্তন",
     embeddingChangeConfirm: "আপনি আপনার এমবেডিং মডেল {{from}} থেকে {{to}} তে পরিবর্তন করতে যাচ্ছেন।",
     rebuildRequired: "গুরুত্বপূর্ণ: পুনর্নির্মাণ প্রয়োজন",
